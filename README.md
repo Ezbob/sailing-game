@@ -1,2 +1,2 @@
 # sailing-game
-A game about sailed written in Lua with Love2d
+A game about sailing, written in Lua with Love2d
