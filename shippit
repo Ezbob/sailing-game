@@ -1,0 +1,6 @@
+#!/bin/bash
+
+LOVE_SHIP_FILES="*.lua ass/*.png" 
+
+zip -r shipped.love $LOVE_SHIP_FILES
+exec love shipped.love
