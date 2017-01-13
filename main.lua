@@ -24,7 +24,8 @@ function love.load()
 	table.insert(renderable_entities, player)
 	image = love.graphics.newImage("ass/idle_boat.png")
 	renderable_entities.player.grid = anim8.newGrid(188, 150, image:getWidth(), image:getHeight())
-	renderable_entities.player.frames = renderable_entities.player.grid(0, "0-18")
+	local g = renderable_entities.player.grid
+	animation = anim8.newAnimation(g("1-18", 1), 0.1)
 	camera = Camera.new()
 	love.window.setTitle(Consts.window.title)
 	love.window.setMode(Consts.window.width, Consts.window.height, Consts.window.properties)
@@ -38,6 +39,7 @@ function love.draw()
 	end]]--
 	Debug.show_movement(renderable_entities.player)
 	Debug.show_screen_consts(nil, 140)
+	animation:draw(image, renderable_entities.player.position.x, renderable_entities.player.position.y)
 end
 
 function love.focus(in_focus)
@@ -45,6 +47,7 @@ function love.focus(in_focus)
 end
 
 function love.update(delta_t)
+	animation:update(delta_t)
 
 	if not has_focus then return end
 
