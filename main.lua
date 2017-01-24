@@ -2,7 +2,7 @@ local Movable = require 'Movable'
 local Variables = require 'Variables'
 local Consts = require 'Consts'
 local Debug = require 'Debug'
-local bump = require 'bump.lua/bump'
+local bump = require 'bump/bump'
 local anim8 = require 'anim8/anim8'
 
 renderable_entities = {}
@@ -33,7 +33,7 @@ end
 function love.draw()
 	local player = renderable_entities[1]
 	love.graphics.setBackgroundColor(23, 123, 231, 100)
-	Debug.show_movement(renderable_entities[1])
+	Debug.show_movement(player)
 	Debug.show_screen_consts(nil, 140)
 	player.animation[player.currentAnimation].animation:draw(player.spriteSheet, 
 		player.position.x, player.position.y, 0, 0.25, 0.25)
@@ -77,8 +77,10 @@ function love.update(delta_t)
 
 	if keys.up and keys.down then
 	elseif keys.up then
+		player.currentAnimation = 'sailing'
 		player:move_up(delta_t)
 	elseif keys.down then
+		player.currentAnimation = 'sailing'
 		player:move_down(delta_t)
 	end
 
