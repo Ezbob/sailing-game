@@ -55,6 +55,7 @@ function Movable.new(position, step, limits, drawable)
 		}
 	}
 	Movable.__index = Movable
+	Movable.__tostring = function() return "<Movable instance>" end
 	return setmetatable(new_movable, Movable)
 end
 

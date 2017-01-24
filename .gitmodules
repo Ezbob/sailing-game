@@ -4,3 +4,6 @@
 [submodule "anim8"]
 	path = anim8
 	url = https://github.com/kikito/anim8
+[submodule "gamera"]
+	path = gamera
+	url = https://github.com/kikito/gamera
