@@ -16,7 +16,6 @@ function love.load()
 		nil, 
 		18
 	))
-	print(renderable_entities[1])
 	local player = renderable_entities[1]
 	player.spriteSheet = love.graphics.newImage("ass/boat2.png")
 	local width, height = player.spriteSheet:getDimensions()
@@ -84,7 +83,7 @@ function love.update(delta_t)
 		player:move_down(delta_t)
 	end
 
-	if love.keyboard.isDown("escape") then
+	if keys.escape then
 		love.event.quit()
 	end
 

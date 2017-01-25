@@ -5,6 +5,7 @@ local Variables = {
 			right = love.keyboard.isDown("right"),
 			up = love.keyboard.isDown("up"),
 			down = love.keyboard.isDown("down"),
+			escape = love.keyboard.isDown("escape"),
 		}
 	end
 }
